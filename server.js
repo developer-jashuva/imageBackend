@@ -19,7 +19,7 @@ app.use(express.json());
 // const Image = mongoose.model("Image", imageSchema);
 
 // ✅ Route to fetch all images
-app.get("./", (req, res) => {
+app.get("/", (req, res) => {
   res.send("Welcome to the Image Gallery API");
 });
 
@@ -30,4 +30,5 @@ app.get("./", (req, res) => {
 
 // ✅ Start server
 app.listen(5000, () => console.log("Server running on port 5000"));
+
 
