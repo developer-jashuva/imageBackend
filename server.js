@@ -7,26 +7,27 @@ app.use(cors());
 app.use(express.json());
 
 // ✅ Connect MongoDB
-mongoose.connect("mongodb://localhost:27017/imagegallery")
-  .then(() => console.log("MongoDB Connected"))
-  .catch(err => console.log(err));
+// mongoose.connect("mongodb://localhost:27017/imagegallery")
+//   .then(() => console.log("MongoDB Connected"))
+//   .catch(err => console.log(err));
 
 // ✅ Schema + Model
-const imageSchema = new mongoose.Schema({
-  filename: String,
-  url: String
-});
-const Image = mongoose.model("Image", imageSchema);
+// const imageSchema = new mongoose.Schema({
+//   filename: String,
+//   url: String
+// });
+// const Image = mongoose.model("Image", imageSchema);
 
 // ✅ Route to fetch all images
 app.get("./", (req, res) => {
   res.send("Welcome to the Image Gallery API");
 });
 
-app.get("/images", async (req, res) => {
-  const images = await Image.find();
-  res.json(images);
-});
+// app.get("/images", async (req, res) => {
+//   const images = await Image.find();
+//   res.json(images);
+// });
 
 // ✅ Start server
 app.listen(5000, () => console.log("Server running on port 5000"));
+
